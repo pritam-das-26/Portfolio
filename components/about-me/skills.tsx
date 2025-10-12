@@ -8,13 +8,8 @@ export const Skills = ({
 }: {
   skills: {
     name: string;
-    color: string;
-    darkColor: string;
   }[];
 }) => {
-  const { theme, systemTheme } = useTheme();
-
-  const currentTheme = theme === "system" ? systemTheme : theme;
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -44,23 +39,10 @@ export const Skills = ({
       animate="visible"
     >
       {skills.map((skill) => (
-        <motion.div
-          key={skill.name}
-          variants={badgeVariants as any}
-          whileHover={{
-            scale: 1.1,
-            backgroundColor:
-              currentTheme === "dark" ? skill.darkColor : skill.color,
-            boxShadow:
-              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-            y: -5,
-          }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        >
+        <motion.div key={skill.name} variants={badgeVariants as any}>
           <Badge
             variant="default"
-            className="px-3 py-1 cursor-pointer dark:bg-gray-700 dark:text-gray-200 transition-colors duration-300"
+            className="px-3 py-1 dark:bg-gray-700 dark:text-gray-200 transition-all duration-300 hover:bg-gray-800 hover:text-white"
           >
             {skill.name}
           </Badge>

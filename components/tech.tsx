@@ -1,29 +1,25 @@
 "use client";
 
 import React from "react";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { BsFillCloudsFill } from "react-icons/bs";
-import { DiRedis } from "react-icons/di";
-import {
-  FaAngular,
-  FaAws,
-  FaJenkins,
-  FaGitSquare,
-  FaRust,
-} from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
-import { IoLogoJavascript } from "react-icons/io5";
-import { RiNextjsFill, RiJavaLine, RiNodejsLine } from "react-icons/ri";
 import {
   SiTypescript,
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiRedux,
   SiReacthookform,
   SiEslint,
   SiReactrouter,
-  SiGooglecloud,
+  SiAmazonwebservices,
   SiGithubactions,
-  SiSpringboot,
+  SiPython,
+  SiCloudflare,
+  SiGit,
+  SiRedis,
+  SiNodedotjs,
+  SiAngular,
+  SiFastapi,
 } from "react-icons/si";
-import { TbBrandReact, TbBrandRedux } from "react-icons/tb";
 import InfiniteCarousel from "./carousel";
 
 export default function Tech() {
@@ -33,21 +29,21 @@ export default function Tech() {
         items={[
           <SiTypescript
             key={0}
-            className="text-primary hover:text-destructive h-[34px] w-[34px]"
+            className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <IoLogoJavascript
+          <SiJavascript
             key={1}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <TbBrandReact
+          <SiReact
             key={2}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <RiNextjsFill
+          <SiNextdotjs
             key={3}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <TbBrandRedux
+          <SiRedux
             key={4}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
@@ -63,60 +59,40 @@ export default function Tech() {
             key={7}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <FaAngular
+          <SiAngular
             key={8}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <FaAws
+          <SiAmazonwebservices
             key={9}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <BsFillCloudsFill
+          <SiCloudflare
             key={10}
-            className="text-primary hover:text-destructive h-10 w-10"
-          />,
-          <SiGooglecloud
-            key={11}
-            className="text-primary hover:text-destructive h-10 w-10"
-          />,
-          <FaJenkins
-            key={12}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
           <SiGithubactions
             key={13}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <FaGitSquare
+          <SiGit
             key={14}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <RiJavaLine
+          <SiPython
             key={15}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <SiSpringboot
+          <SiFastapi
             key={16}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <BiLogoPostgresql
-            key={17}
-            className="text-primary hover:text-destructive h-10 w-10"
-          />,
-          <DiRedis
+          <SiRedis
             key={18}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
-          <RiNodejsLine
+          <SiNodedotjs
             key={19}
-            className="text-primary hover:text-destructive h-10 w-10"
-          />,
-          <FaGolang
-            key={20}
-            className="text-primary hover:text-destructive h-10 w-10"
-          />,
-          <FaRust
-            key={21}
             className="text-primary hover:text-destructive h-10 w-10"
           />,
         ]}
