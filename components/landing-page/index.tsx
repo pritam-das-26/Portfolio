@@ -297,36 +297,6 @@ export default function LandingPage() {
       </div>
 
       <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center min-h-screen max-w-screen-lg mt-8 md:mt-28 mx-4 xl:mx-auto relative">
-        {/* Left Column - Resume/Profile */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex-1 flex justify-center items-center lg:justify-end w-full mt-6"
-        >
-          <div className="relative group">
-            {/* Glowing border effect */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl" />
-
-            <motion.div
-              whileHover={{ scale: 1.02, y: -8 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500"
-            >
-              {/* Shimmer effect on hover */}
-              <div className="absolute hidden md:block inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-full transition-transform duration-1000 rounded-3xl" />
-
-              <Compare
-                firstImage="/profile/pritamResume4.png"
-                secondImage="/profile/coder.jpg"
-                firstImageClassName="object-cover"
-                secondImageClassname="object-cover"
-                className="h-[250px] sm:h-[250px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[450px] relative z-10"
-                slideMode="hover"
-              />
-            </motion.div>
-          </div>
-        </motion.div>
 
         {/* Right Column - Content */}
         <motion.div
@@ -351,6 +321,34 @@ export default function LandingPage() {
           </motion.h2>
 
           {/* Call to Action Buttons */}
+
+          {/* Quick Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
+            className="flex flex-wrap justify-center md:justify-start gap-6 mt-4 mb-2"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <Code className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-muted-foreground">
+                Front End Developer
+              </span>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <Briefcase className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-muted-foreground">
+                Immediately Available
+              </span>
+            </motion.div>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -388,34 +386,6 @@ export default function LandingPage() {
                 <Sparkles className="w-4 h-4 ml-2" />
               </Button>
             </motion.a>
-          </motion.div>
-
-          {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            className="flex flex-wrap justify-center md:justify-start gap-6 mt-4 mb-2"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <Code className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-muted-foreground">
-                Front End Developer
-              </span>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <Briefcase className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-muted-foreground">
-                Immediately Available
-              </span>
-            </motion.div>
           </motion.div>
         </motion.div>
         {/* About Me Section */}
