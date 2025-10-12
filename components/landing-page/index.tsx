@@ -23,7 +23,7 @@ export default function LandingPage() {
   const isNotTop = scrollY > 250;
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen ">
       {/* Background Images */}
       {isDarkMode && !isNotTop && (
         <motion.div
@@ -296,7 +296,7 @@ export default function LandingPage() {
         />
       </div>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center min-h-screen max-w-screen-lg mt-16 md:mt-60 mx-4 xl:mx-auto relative z-20">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center min-h-screen max-w-screen-lg mt-8 md:mt-28 mx-4 xl:mx-auto relative z-20">
         {/* Left Column - Resume/Profile */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
