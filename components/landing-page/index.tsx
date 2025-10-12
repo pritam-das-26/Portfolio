@@ -318,7 +318,7 @@ export default function LandingPage() {
               <div className="absolute hidden md:block inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-full transition-transform duration-1000 rounded-3xl" />
 
               <Compare
-                firstImage="/profile/resume4.png"
+                firstImage="/profile/pritamResume4.png"
                 secondImage="/profile/coder.jpg"
                 firstImageClassName="object-cover"
                 secondImageClassname="object-cover"
@@ -404,7 +404,7 @@ export default function LandingPage() {
             >
               <Code className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-muted-foreground">
-                Full Stack
+                Front End Developer
               </span>
             </motion.div>
 
@@ -445,7 +445,7 @@ export const Title = memo(() => {
     >
       Hi, I&apos;m{" "}
       <motion.span whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-        <Cover className="cursor-crosshair text-primary">Hareesh</Cover>
+        <Cover className="cursor-crosshair text-primary">Pritam</Cover>
       </motion.span>
     </motion.h1>
   );
@@ -461,7 +461,7 @@ export function Resume() {
       className="w-full rounded-3xl dark:bg-neutral-900 bg-neutral-100 border-neutral-200 dark:border-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500"
     >
       <Compare
-        firstImage="/profile/resume.png"
+        firstImage="/profile/resumePritam.png"
         secondImage="/profile/harsh01.jpg"
         firstImageClassName="object-fill"
         secondImageClassname="object-fit object-left-top"
