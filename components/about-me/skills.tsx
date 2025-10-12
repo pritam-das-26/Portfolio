@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "motion/react";
-import { useTheme } from "next-themes";
 import { Badge } from "../ui/badge";
 
 export const Skills = ({

@@ -12,7 +12,7 @@ export const PROJECT_INFO = [
   image: "/assets/project/vembric.png",
   description:
     "A modern MERN stack-based alternative to Docusaurus that automates API documentation through REST endpoints with built-in versioning — eliminating manual MDX file creation. Features a sleek, developer-friendly interface powered by Next.js.",
-  link: "https://github.com/pritamdas26/vembric",
+  link: "https://github.com/pritam-das-26/vembric",
   live: "https://vembric.vercel.app/",
   bullets: [
     "Automated API documentation generation via REST API integration",
@@ -29,7 +29,7 @@ export const PROJECT_INFO = [
   image: "/assets/project/coloured-icons.png",
   description:
     "A Next.js-based icon integration library offering instant, CDN-delivered colored icons. Eliminates installation and build steps, providing developers with a fast, plug-and-play experience for modern UI design.",
-  link: "https://github.com/pritamdas26/coloured-icons",
+  link: "https://github.com/pritam-das-26/coloured-icons",
   live: "https://coloured-icons.vercel.app",
   bullets: [
     "Zero-install CDN-based delivery for over 1,000+ brand and technology icons",
@@ -40,6 +40,32 @@ export const PROJECT_INFO = [
   ],
   tech: ["Next.js", "Tailwind CSS", "CDN", "React", "UI Library"],
 },
+{
+  id: 3,
+  name: "Personal Portfolio",
+  image: "/assets/project/portfolio.png",
+  description:
+    "A modern, interactive personal portfolio built with Next.js and Tailwind CSS, featuring dynamic animations, 3D visuals, and a sleek dark-themed interface. Showcases technical expertise, projects, and professional background in a visually engaging format.",
+  link: "https://github.com/pritam-das-26/Portfolio",
+  live: "https://pd26.vercel.app/",
+  bullets: [
+    "Crafted with Next.js 15, TypeScript, and Tailwind CSS for performance and maintainability",
+    "Utilizes Framer Motion and Three.js for fluid 3D and motion effects",
+    "Built with Radix UI and Lucide Icons for accessible, responsive UI components",
+    "Showcases professional experience, technical stack, and highlighted projects in a single-page layout",
+    "Deployed seamlessly on Vercel with optimized dark theme and smooth navigation",
+  ],
+  tech: [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Framer Motion",
+    "Radix UI",
+    "Lucide Icons",
+    "Three.js",
+  ],
+},
+
 ];
 
 export const FRONTEND_SKILLS = [
