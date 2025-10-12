@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { WindowEventProvider } from "@/contexts/window-event-provider";
 import { ThemeProvider } from "@/components/theme";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -33,7 +22,7 @@ export const metadata: Metadata = {
     title: "Pritam Das",
     description:
       "Full-stack developer specializing in modern web applications.",
-    url: "https://hareesh.is-a.dev",
+    url: "https://pritam.vercel.app",
     siteName: "Pritam Das",
     locale: "en_US",
     type: "website",
@@ -41,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Pritam Das",
     description: "Full-stack developer portfolio",
-    creator: "@hareesh_bhittam",
+    creator: "@pritam_das",
   },
 };
 
@@ -53,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="font-sans antialiased"
         suppressHydrationWarning
       >
         <WindowEventProvider>

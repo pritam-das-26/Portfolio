@@ -96,13 +96,13 @@ export default function AboutMePage() {
                   >
                     I&#39;m a Software Engineer at{" "}
                     <motion.a
-                      href="https://reldyn.co"
+                      href="https://www.datasee.ai/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 font-semibold transition-colors duration-300 inline-flex items-center gap-1 group"
                       whileHover={{ scale: 1.02 }}
                     >
-                      <span>RELDYN</span>
+                      <span>DATASEE.AI</span>
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </motion.a>
                     , where I craft innovative solutions and bring ideas to

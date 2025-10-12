@@ -8,7 +8,6 @@ import { useTheme } from "next-themes";
 import { Cover } from "../ui/cover";
 import { Compare } from "../ui/compare";
 import AboutMePage from "../about-me";
-import { SocialDialog } from "../ui/social-dialog";
 import { useWindowEvent } from "@/contexts/window-event-provider";
 import { ArrowDown, Sparkles, Code, Briefcase } from "lucide-react";
 
@@ -414,7 +413,7 @@ export default function LandingPage() {
             >
               <Briefcase className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-muted-foreground">
-                Production Ready
+                Immediately Available
               </span>
             </motion.div>
           </motion.div>
@@ -429,8 +428,6 @@ export default function LandingPage() {
           <AboutMePage />
         </motion.div>
       </div>
-
-      <SocialDialog />
     </div>
   );
 }

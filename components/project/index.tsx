@@ -147,7 +147,7 @@ export default function ProjectPage() {
         className="text-center"
       >
         <motion.a
-          href="https://github.com/Hareesh108"
+          href="https://github.com/pritam-das-26?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-8 py-4 bg-secondary text-secondary-foreground hover:bg-secondary/80 font-semibold rounded-2xl hover:shadow-xl transition-all duration-300 border border-border relative overflow-hidden group cursor-pointer"

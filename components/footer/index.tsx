@@ -77,7 +77,7 @@ export default function Footer() {
                   {[
                     {
                       id: 0,
-                      href: "https://www.linkedin.com/in/hareeshbhittam/",
+                      href: "https://www.linkedin.com/in/pritamdas26/",
                       icon: FaLinkedin,
                       label: "LinkedIn",
                     },
@@ -89,16 +89,16 @@ export default function Footer() {
                     },
                     {
                       id: 2,
-                      href: "https://github.com/Hareesh108",
+                      href: "https://github.com/pritam-das-26/",
                       icon: FaGithub,
                       label: "GitHub",
                     },
-                    {
-                      id: 3,
-                      href: "https://www.instagram.com/_harsh_20.6/",
-                      icon: FaInstagram,
-                      label: "Instagram",
-                    },
+                    // {
+                    //   id: 3,
+                    //   href: "https://www.instagram.com/_harsh_20.6/",
+                    //   icon: FaInstagram,
+                    //   label: "Instagram",
+                    // },
                   ].map((social, index) => (
                     <motion.a
                       key={social.id}
@@ -148,7 +148,7 @@ export default function Footer() {
                       className="font-semibold text-primary hover:text-primary/80 transition-colors duration-300 inline-flex items-center gap-1 group"
                       whileHover={{ scale: 1.02 }}
                     >
-                      <span>Hareesh</span>
+                      <span>Pritam</span>
                       <FaArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </motion.a>
                   </p>
