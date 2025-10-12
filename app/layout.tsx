@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { WindowEventProvider } from "@/contexts/window-event-provider";
 import { ThemeProvider } from "@/components/theme";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className="font-sans antialiased"
+        className={`${inter.className} antialiased`}
         suppressHydrationWarning
       >
         <WindowEventProvider>
