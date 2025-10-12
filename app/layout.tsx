@@ -17,30 +17,30 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hareesh Bhittam",
-    template: "%s | Hareesh Bhittam",
+    default: "Pritam Das",
+    template: "%s | Pritam Das",
   },
   description:
     "Full-stack developer specializing in React, Next.js, TypeScript, and Spring Boot.",
   keywords: [
-    "Hareesh Bhittam",
+    "Pritam Das",
     "React",
     "Next.js",
     "Spring Boot",
     "Full-Stack Developer",
   ],
-  authors: [{ name: "Hareesh Bhittam" }],
+  authors: [{ name: "Pritam Das" }],
   openGraph: {
-    title: "Hareesh Bhittam",
+    title: "Pritam Das",
     description:
       "Full-stack developer specializing in modern web applications.",
     url: "https://hareesh.is-a.dev",
-    siteName: "Hareesh Bhittam",
+    siteName: "Pritam Das",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    title: "Hareesh Bhittam",
+    title: "Pritam Das",
     description: "Full-stack developer portfolio",
     creator: "@hareesh_bhittam",
   },

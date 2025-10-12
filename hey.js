@@ -1,5 +1,5 @@
 export const resume = {
-  name: "Hareesh Bhittam",
+  name: "Pritam Das",
   title: "Full Stack Developer",
   skills: [
     "ReactJS",
@@ -10,7 +10,7 @@ export const resume = {
     "Docker",
     "Kubernetes",
     "AWS",
-    "PostgreSQL"
+    "PostgreSQL",
   ],
   debugNinja: true,
   yearsOfExperience: 3,
@@ -22,4 +22,4 @@ export const resume = {
       this.yearsOfExperience >= 3
     );
   },
-}
+};

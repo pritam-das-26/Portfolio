@@ -98,7 +98,7 @@ const Navbar = () => {
 
         <div className={cn(`flex-grow`)}>
           <Link href="/" passHref>
-            <h1 className="text-2xl font-bold">Hareesh Bhittam</h1>
+            <h1 className="text-2xl font-bold">Pritam Das</h1>
           </Link>
         </div>
 
