@@ -83,7 +83,7 @@ export default function Footer() {
                     },
                     {
                       id: 1,
-                      href: "https://x.com/hareesh_bhittam",
+                      href: "https://x.com/pritamdas26/",
                       icon: FaTwitter,
                       label: "Twitter",
                     },
@@ -142,7 +142,7 @@ export default function Footer() {
                     <FaHeart className="inline-block w-3 h-3 text-red-500 animate-pulse" />{" "}
                     by{" "}
                     <motion.a
-                      href="https://www.linkedin.com/in/hareeshbhittam/"
+                      href="https://www.linkedin.com/in/pritamdas26/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-primary hover:text-primary/80 transition-colors duration-300 inline-flex items-center gap-1 group"
