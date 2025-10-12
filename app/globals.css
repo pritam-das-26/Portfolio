@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  /* next/font sets --font-inter on the html element; provide a fallback stack here */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+html {
+  font-family: var(--font-inter, var(--font-sans));
 }
 
 /* Enhanced Color Transitions */
@@ -38,24 +45,23 @@ body {
 }
 
 .animate-gradient-border-before::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 2px; 
-  background: linear-gradient(45deg,#fdb12c,#ffffff,#EB8317,#ffffff);
+  padding: 2px;
+  background: linear-gradient(45deg, #fdb12c, #ffffff, #eb8317, #ffffff);
   background-size: 300% 300%;
   animation: gradient-border-animation 3s ease infinite;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
-          mask-composite: exclude;
+  mask-composite: exclude;
 }
 
 /* Enhanced Grid Animations */
 @keyframes grid-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(1);
   }
@@ -87,7 +93,7 @@ body {
   display: flex;
   gap: 10px;
   width: calc(10%);
-  animation: scroll 1s linear infinite; 
+  animation: scroll 1s linear infinite;
 }
 
 /* Enhanced Traversing Animations with Color Transitions */
@@ -95,20 +101,40 @@ body {
   0% {
     transform: translateY(-100%);
     opacity: 0;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
   20% {
     opacity: 1;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   80% {
     opacity: 1;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   100% {
     transform: translateY(100%);
     opacity: 0;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
 }
 
@@ -116,20 +142,40 @@ body {
   0% {
     transform: translateY(-100%);
     opacity: 0;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
   20% {
     opacity: 1;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   80% {
     opacity: 1;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   100% {
     transform: translateY(100%);
     opacity: 0;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
 }
 
@@ -137,20 +183,40 @@ body {
   0% {
     transform: translateX(-100%);
     opacity: 0;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
   20% {
     opacity: 1;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   80% {
     opacity: 1;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   100% {
     transform: translateX(100%);
     opacity: 0;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
 }
 
@@ -158,20 +224,40 @@ body {
   0% {
     transform: translateX(100%);
     opacity: 0;
-    background: linear-gradient(to left, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to left,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
   20% {
     opacity: 1;
-    background: linear-gradient(to left, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to left,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   80% {
     opacity: 1;
-    background: linear-gradient(to left, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to left,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   100% {
     transform: translateX(-100%);
     opacity: 0;
-    background: linear-gradient(to left, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to left,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
 }
 
@@ -196,20 +282,40 @@ body {
   0% {
     transform: translateY(-100%);
     opacity: 0;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
   20% {
     opacity: 1;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   80% {
     opacity: 1;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   100% {
     transform: translateY(100%);
     opacity: 0;
-    background: linear-gradient(to bottom, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
 }
 
@@ -217,20 +323,40 @@ body {
   0% {
     transform: translateX(-100%);
     opacity: 0;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
   20% {
     opacity: 1;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   80% {
     opacity: 1;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.6), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.6),
+      transparent
+    );
   }
   100% {
     transform: translateX(100%);
     opacity: 0;
-    background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.3), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(var(--primary) / 0.3),
+      transparent
+    );
   }
 }
 
@@ -238,20 +364,36 @@ body {
   0% {
     transform: translate(0, 0);
     opacity: 0;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.3) 0%,
+      transparent 70%
+    );
   }
   20% {
     opacity: 1;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.6) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.6) 0%,
+      transparent 70%
+    );
   }
   80% {
     opacity: 1;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.6) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.6) 0%,
+      transparent 70%
+    );
   }
   100% {
     transform: translate(100vw, 100vh);
     opacity: 0;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.3) 0%,
+      transparent 70%
+    );
   }
 }
 
@@ -259,20 +401,36 @@ body {
   0% {
     transform: translate(100vw, 0);
     opacity: 0;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.3) 0%,
+      transparent 70%
+    );
   }
   20% {
     opacity: 1;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.6) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.6) 0%,
+      transparent 70%
+    );
   }
   80% {
     opacity: 1;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.6) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.6) 0%,
+      transparent 70%
+    );
   }
   100% {
     transform: translate(0, 100vh);
     opacity: 0;
-    background: radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, transparent 70%);
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.3) 0%,
+      transparent 70%
+    );
   }
 }
 
@@ -332,7 +490,7 @@ body {
     text-wrap: balance;
   }
   .text-classic {
-    color: #EB8317;
+    color: #eb8317;
   }
 }
 
@@ -368,7 +526,7 @@ body {
 
     --radius: 0.5rem;
   }
-  
+
   .dark {
     --background: 40 7% 8%;
     --foreground: 60 9% 98%;
