@@ -296,8 +296,7 @@ export default function LandingPage() {
         />
       </div>
 
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center min-h-screen max-w-screen-lg mt-8 md:mt-28 mx-4 xl:mx-auto relative">
-
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center min-h-screen max-w-(--breakpoint-lg) mt-8 md:mt-28 mx-4 xl:mx-auto relative">
         {/* Right Column - Content */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -331,7 +330,7 @@ export default function LandingPage() {
           >
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
-              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-xs hover:shadow-md transition-all duration-300"
             >
               <Code className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-muted-foreground">
@@ -341,7 +340,7 @@ export default function LandingPage() {
 
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
-              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+              className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl shadow-xs hover:shadow-md transition-all duration-300"
             >
               <Briefcase className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-muted-foreground">
@@ -362,7 +361,7 @@ export default function LandingPage() {
               className="transition-all duration-300 w-full sm:w-auto"
             >
               <Button
-                className="w-full sm:w-auto text-lg bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border shadow-lg hover:shadow-xl transition-all duration-300"
+                className="cursor-pointer w-full sm:w-auto text-lg bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border shadow-lg hover:shadow-xl transition-all duration-300"
                 variant="secondary"
                 size="lg"
               >
@@ -378,7 +377,7 @@ export default function LandingPage() {
               className="transition-all duration-300 w-full sm:w-auto"
             >
               <Button
-                className="w-full sm:w-auto text-lg bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="cursor-pointer w-full sm:w-auto text-lg bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
                 variant="default"
                 size="lg"
               >
@@ -431,7 +430,7 @@ export function Resume() {
         firstImage="/profile/resumePritam.png"
         secondImage="/profile/harsh01.jpg"
         firstImageClassName="object-fill"
-        secondImageClassname="object-fit object-left-top"
+        secondImageClassname="object-fit object-top-left"
         className="h-[250px] sm:h-[250px] md:h-[400px] lg:h-[450px] w-[250px] md:w-[300px] lg:w-[450px]"
         slideMode="hover"
       />

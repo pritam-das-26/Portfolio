@@ -24,7 +24,7 @@ import InfiniteCarousel from "./carousel";
 
 export default function Tech() {
   return (
-    <div className="max-w-screen-lg mx-5 lg:mx-auto flex justify-center items-center mt-6 relative before:content-[''] before:absolute before:left-0 before:top-0 before:w-20 before:h-full before:bg-gradient-to-r before:from-background before:to-transparent before:z-10 after:content-[''] after:absolute after:right-0 after:top-0 after:w-20 after:h-full after:bg-gradient-to-l after:from-background after:to-transparent after:z-10">
+    <div className="max-w-(--breakpoint-lg) mx-5 lg:mx-auto flex justify-center items-center mt-6 relative before:content-[''] before:absolute before:left-0 before:top-0 before:w-20 before:h-full before:bg-linear-to-r before:from-background before:to-transparent before:z-10 after:content-[''] after:absolute after:right-0 after:top-0 after:w-20 after:h-full after:bg-linear-to-l after:from-background after:to-transparent after:z-10">
       <InfiniteCarousel
         items={[
           <SiTypescript

@@ -19,7 +19,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="max-w-screen-lg mx-4 lg:mx-auto mt-8 md:mt-12 px-4">
+    <div className="max-w-(--breakpoint-lg) mx-4 lg:mx-auto mt-8 md:mt-12 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         {/* Glowing border effect */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-md sm:blur-lg md:blur-xl pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-md sm:blur-lg md:blur-xl pointer-events-none" />
 
         <div className="relative transition-all duration-500 overflow-hidden">
           <div className="relative p-6 md:p-8">
@@ -106,7 +106,7 @@ export default function Footer() {
                       aria-label={social.label}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 bg-background/80 backdrop-blur-sm border border-border/50 rounded-xl hover:bg-accent transition-all duration-300 group"
+                      className="flex items-center justify-center w-10 h-10 bg-background/80 backdrop-blur-xs border border-border/50 rounded-xl hover:bg-accent transition-all duration-300 group"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, y: 20 }}

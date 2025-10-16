@@ -6,7 +6,7 @@ import { Mail, MessageCircle, ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div id="contact" className="scroll-mt-24 max-w-screen-lg mx-4 lg:mx-auto mt-8 md:mt-12">
+    <div id="contact" className="scroll-mt-24 max-w-(--breakpoint-lg) mx-4 lg:mx-auto mt-8 md:mt-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -49,14 +49,14 @@ export default function ContactPage() {
         </div>
 
         {/* Glowing border effect */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-md sm:blur-lg md:blur-xl pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-md sm:blur-lg md:blur-xl pointer-events-none" />
 
-        <div className="relative bg-card border border-border rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-sm overflow-hidden">
+        <div className="relative bg-card border border-border rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-xs overflow-hidden">
           {/* Animated gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 hover:opacity-100 transition-all duration-700 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 opacity-0 hover:opacity-100 transition-all duration-700 pointer-events-none" />
 
           {/* Shimmer effect on hover */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
 
           <div className="relative p-6 md:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

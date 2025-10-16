@@ -1,496 +1,545 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  /* next/font sets --font-inter on the html element; provide a fallback stack here */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-html {
-  font-family: var(--font-inter, var(--font-sans));
-}
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-/* Enhanced Color Transitions */
-@keyframes color-shift {
-  0% {
-    filter: hue-rotate(0deg) saturate(100%);
-  }
-  25% {
-    filter: hue-rotate(15deg) saturate(110%);
-  }
-  50% {
-    filter: hue-rotate(30deg) saturate(120%);
-  }
-  75% {
-    filter: hue-rotate(15deg) saturate(110%);
-  }
-  100% {
-    filter: hue-rotate(0deg) saturate(100%);
-  }
-}
-
-@keyframes gradient-border-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient-border-before::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(45deg, #fdb12c, #ffffff, #eb8317, #ffffff);
-  background-size: 300% 300%;
-  animation: gradient-border-animation 3s ease infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-}
-
-/* Enhanced Grid Animations */
-@keyframes grid-pulse {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.05);
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-@keyframes grid-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+@utility text-balance {
+  text-wrap: balance;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-40%);
-  }
-}
-
-.animate-scroll {
-  display: flex;
-  gap: 10px;
-  width: calc(10%);
-  animation: scroll 1s linear infinite;
-}
-
-/* Enhanced Traversing Animations with Color Transitions */
-@keyframes traverse-left {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-  20% {
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  80% {
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-}
-
-@keyframes traverse-right {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-  20% {
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  80% {
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-}
-
-@keyframes traverse-horizontal {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-  20% {
-    opacity: 1;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  80% {
-    opacity: 1;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-}
-
-@keyframes traverse-horizontal-reverse {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-    background: linear-gradient(
-      to left,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-  20% {
-    opacity: 1;
-    background: linear-gradient(
-      to left,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  80% {
-    opacity: 1;
-    background: linear-gradient(
-      to left,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-    background: linear-gradient(
-      to left,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-}
-
-.animate-traverse-left {
-  animation: traverse-left 3s ease-in-out infinite;
-}
-
-.animate-traverse-right {
-  animation: traverse-right 3s ease-in-out infinite;
-}
-
-.animate-traverse-horizontal {
-  animation: traverse-horizontal 3s ease-in-out infinite;
-}
-
-.animate-traverse-horizontal-reverse {
-  animation: traverse-horizontal-reverse 3s ease-in-out infinite;
-}
-
-/* Enhanced Middle Traversing Animations */
-@keyframes traverse-vertical {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-  20% {
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  80% {
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-}
-
-@keyframes traverse-horizontal-middle {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-  20% {
-    opacity: 1;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  80% {
-    opacity: 1;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.6),
-      transparent
-    );
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-    background: linear-gradient(
-      to right,
-      transparent,
-      hsl(var(--primary) / 0.3),
-      transparent
-    );
-  }
-}
-
-@keyframes traverse-diagonal {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.3) 0%,
-      transparent 70%
-    );
-  }
-  20% {
-    opacity: 1;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.6) 0%,
-      transparent 70%
-    );
-  }
-  80% {
-    opacity: 1;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.6) 0%,
-      transparent 70%
-    );
-  }
-  100% {
-    transform: translate(100vw, 100vh);
-    opacity: 0;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.3) 0%,
-      transparent 70%
-    );
-  }
-}
-
-@keyframes traverse-diagonal-reverse {
-  0% {
-    transform: translate(100vw, 0);
-    opacity: 0;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.3) 0%,
-      transparent 70%
-    );
-  }
-  20% {
-    opacity: 1;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.6) 0%,
-      transparent 70%
-    );
-  }
-  80% {
-    opacity: 1;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.6) 0%,
-      transparent 70%
-    );
-  }
-  100% {
-    transform: translate(0, 100vh);
-    opacity: 0;
-    background: radial-gradient(
-      circle,
-      hsl(var(--primary) / 0.3) 0%,
-      transparent 70%
-    );
-  }
-}
-
-.animate-traverse-vertical {
-  animation: traverse-vertical 4s ease-in-out infinite;
-}
-
-.animate-traverse-horizontal-middle {
-  animation: traverse-horizontal-middle 4s ease-in-out infinite;
-}
-
-.animate-traverse-diagonal {
-  animation: traverse-diagonal 8s ease-in-out infinite;
-}
-
-.animate-traverse-diagonal-reverse {
-  animation: traverse-diagonal-reverse 8s ease-in-out infinite;
-}
-
-/* New Grid Enhancement Classes */
-.animate-grid-pulse {
-  animation: grid-pulse 3s ease-in-out infinite;
-}
-
-.animate-grid-rotate {
-  animation: grid-rotate 20s linear infinite;
-}
-
-.animate-color-shift {
-  animation: color-shift 10s ease-in-out infinite;
-}
-
-/* Enhanced Floating Particles */
-@keyframes float-up {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-.animate-float-up {
-  animation: float-up 6s ease-in-out infinite;
+@utility text-classic {
+  color: #eb8317;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Enhanced Color Transitions */
+  @keyframes color-shift {
+    0% {
+      filter: hue-rotate(0deg) saturate(100%);
+    }
+    25% {
+      filter: hue-rotate(15deg) saturate(110%);
+    }
+    50% {
+      filter: hue-rotate(30deg) saturate(120%);
+    }
+    75% {
+      filter: hue-rotate(15deg) saturate(110%);
+    }
+    100% {
+      filter: hue-rotate(0deg) saturate(100%);
+    }
   }
-  .text-classic {
-    color: #eb8317;
+
+  @keyframes gradient-border-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-border-before::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #fdb12c, #ffffff, #eb8317, #ffffff);
+    background-size: 300% 300%;
+    animation: gradient-border-animation 3s ease infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+  /* Enhanced Grid Animations */
+  @keyframes grid-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes grid-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-40%);
+    }
+  }
+
+  .animate-scroll {
+    display: flex;
+    gap: 10px;
+    width: calc(10%);
+    animation: scroll 1s linear infinite;
+  }
+
+  /* Enhanced Traversing Animations with Color Transitions */
+  @keyframes traverse-left {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+    20% {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    80% {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+  }
+
+  @keyframes traverse-right {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+    20% {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    80% {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+  }
+
+  @keyframes traverse-horizontal {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+    20% {
+      opacity: 1;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    80% {
+      opacity: 1;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+  }
+
+  @keyframes traverse-horizontal-reverse {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+      background: linear-gradient(
+        to left,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+    20% {
+      opacity: 1;
+      background: linear-gradient(
+        to left,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    80% {
+      opacity: 1;
+      background: linear-gradient(
+        to left,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+      background: linear-gradient(
+        to left,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+  }
+
+  .animate-traverse-left {
+    animation: traverse-left 3s ease-in-out infinite;
+  }
+
+  .animate-traverse-right {
+    animation: traverse-right 3s ease-in-out infinite;
+  }
+
+  .animate-traverse-horizontal {
+    animation: traverse-horizontal 3s ease-in-out infinite;
+  }
+
+  .animate-traverse-horizontal-reverse {
+    animation: traverse-horizontal-reverse 3s ease-in-out infinite;
+  }
+
+  /* Enhanced Middle Traversing Animations */
+  @keyframes traverse-vertical {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+    20% {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    80% {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+  }
+
+  @keyframes traverse-horizontal-middle {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+    20% {
+      opacity: 1;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    80% {
+      opacity: 1;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.6),
+        transparent
+      );
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+      background: linear-gradient(
+        to right,
+        transparent,
+        hsl(var(--primary) / 0.3),
+        transparent
+      );
+    }
+  }
+
+  @keyframes traverse-diagonal {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.3) 0%,
+        transparent 70%
+      );
+    }
+    20% {
+      opacity: 1;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.6) 0%,
+        transparent 70%
+      );
+    }
+    80% {
+      opacity: 1;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.6) 0%,
+        transparent 70%
+      );
+    }
+    100% {
+      transform: translate(100vw, 100vh);
+      opacity: 0;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.3) 0%,
+        transparent 70%
+      );
+    }
+  }
+
+  @keyframes traverse-diagonal-reverse {
+    0% {
+      transform: translate(100vw, 0);
+      opacity: 0;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.3) 0%,
+        transparent 70%
+      );
+    }
+    20% {
+      opacity: 1;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.6) 0%,
+        transparent 70%
+      );
+    }
+    80% {
+      opacity: 1;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.6) 0%,
+        transparent 70%
+      );
+    }
+    100% {
+      transform: translate(0, 100vh);
+      opacity: 0;
+      background: radial-gradient(
+        circle,
+        hsl(var(--primary) / 0.3) 0%,
+        transparent 70%
+      );
+    }
+  }
+
+  .animate-traverse-vertical {
+    animation: traverse-vertical 4s ease-in-out infinite;
+  }
+
+  .animate-traverse-horizontal-middle {
+    animation: traverse-horizontal-middle 4s ease-in-out infinite;
+  }
+
+  .animate-traverse-diagonal {
+    animation: traverse-diagonal 8s ease-in-out infinite;
+  }
+
+  .animate-traverse-diagonal-reverse {
+    animation: traverse-diagonal-reverse 8s ease-in-out infinite;
+  }
+
+  /* New Grid Enhancement Classes */
+  .animate-grid-pulse {
+    animation: grid-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-grid-rotate {
+    animation: grid-rotate 20s linear infinite;
+  }
+
+  .animate-color-shift {
+    animation: color-shift 10s ease-in-out infinite;
+  }
+
+  /* Enhanced Floating Particles */
+  @keyframes float-up {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-float-up {
+    animation: float-up 6s ease-in-out infinite;
   }
 }
 

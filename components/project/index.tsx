@@ -10,7 +10,7 @@ export default function ProjectPage() {
   return (
     <div
       id="projects"
-      className="scroll-mt-12 max-w-screen-lg lg:mx-auto mt-8 md:mt-12 px-4"
+      className="scroll-mt-12 max-w-(--breakpoint-lg) lg:mx-auto mt-8 md:mt-12 px-4"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -54,14 +54,14 @@ export default function ProjectPage() {
               </div>
 
               {/* Glowing border effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-primary/20 via-primary/10 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
 
-              <Card className="relative overflow-hidden rounded-3xl bg-card border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full backdrop-blur-sm group flex flex-col">
+              <Card className="relative overflow-hidden rounded-3xl bg-card border border-border shadow-lg hover:shadow-2xl transition-all duration-500 h-full backdrop-blur-xs group flex flex-col">
                 {/* Animated gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
 
                 {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
 
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <div className="space-y-4 flex-1">
@@ -154,7 +154,7 @@ export default function ProjectPage() {
           whileTap={{ scale: 0.95 }}
         >
           {/* Shimmer effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
 
           <GithubIcon className="w-5 h-5 relative z-10" />
           <span className="relative z-10">See More Projects</span>

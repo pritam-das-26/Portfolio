@@ -58,19 +58,19 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
       </div>
 
       {/* Glowing border effect */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-md sm:blur-lg md:blur-xl pointer-events-none" />
+      <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-md sm:blur-lg md:blur-xl pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl transition-all duration-500 overflow-hidden"
+        className="relative bg-card/50 backdrop-blur-xs border border-border/50 rounded-3xl transition-all duration-500 overflow-hidden"
       >
         {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 hover:opacity-100 transition-all duration-700 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 opacity-0 hover:opacity-100 transition-all duration-700 pointer-events-none" />
 
         {/* Shimmer effect on hover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
 
         <div className="relative p-6 md:p-8">
           {/* Carousel Container */}
@@ -88,9 +88,9 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
                   {items.map((item, index) => (
                     <div
                       key={`${setIndex}-${index}`}
-                      className="flex items-center justify-center mx-2 flex-shrink-0"
+                      className="flex items-center justify-center mx-2 shrink-0"
                     >
-                      <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-xl p-4 transition-all duration-300 hover:bg-background/90">
+                      <div className="bg-background/80 backdrop-blur-xs border border-border/50 rounded-xl p-4 transition-all duration-300 hover:bg-background/90">
                         {item}
                       </div>
                     </div>
