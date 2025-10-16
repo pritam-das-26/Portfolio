@@ -35,8 +35,7 @@ export default function ProjectPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -12, scale: 1.02 }}
-              className="group relative cursor-pointer"
+              className="group relative"
             >
               {/* Floating particles effect */}
               <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
