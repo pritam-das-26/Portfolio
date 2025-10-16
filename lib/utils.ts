@@ -120,8 +120,14 @@ export const FRONTEND_SKILLS = [
     name: "UI/UX",
   },
   {
-    name: "Responsive Design",
+    name: "Shadcn UI",
   },
+  {
+    name: "Figma",
+  },
+  {
+    name: "Framer Motion",
+  }
 ];
 
 export const DEVOPS_SKILLS = [
