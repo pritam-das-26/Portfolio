@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
+import { icons } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -100,62 +101,80 @@ export const PROJECT_INFO = [
 export const FRONTEND_SKILLS = [
   {
     name: "React",
+    icon: "react",
   },
   {
     name: "Next.js",
+    icon: "nextjs",
   },
   {
     name: "Angular",
+    icon: "angular",
   },
   {
     name: "TypeScript",
+    icon: "typescript",
   },
   {
     name: "Tailwind CSS",
+    icon: "tailwindcss",
   },
   {
     name: "Redux",
-  },
-  {
-    name: "UI/UX",
+    icon: "redux",
   },
   {
     name: "Shadcn UI",
+    icon: "shadcn",
   },
   {
     name: "Figma",
+    icon: "figma",
   },
   {
     name: "Framer Motion",
-  }
+    icon: "framer",
+  },
 ];
 
 export const DEVOPS_SKILLS = [
   {
     name: "AWS",
+    icon: "aws-light",
   },
   {
     name: "Docker",
+    icon: "docker",
   },
   {
     name: "Git",
+    icon: "git",
   },
   {
-    name: "CI/CD Pipeline",
+    name: "Jenkins",
+    icon: "jenkins",
+  },
+  {
+    name: "GitLab",
+    icon: "gitlab",
   },
 ];
 
 export const BACKEND_SKILLS = [
   {
     name: "Python",
+    icon: "python",
   },
   {
     name: "FastAPI",
+    icon: "fastapi",
   },
   {
     name: "MongoDB",
+    icon: "mongodb",
   },
   {
     name: "Redis",
+    icon: "redis",
   },
 ];

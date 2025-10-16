@@ -7,6 +7,7 @@ export const Skills = ({
 }: {
   skills: {
     name: string;
+    icon: string;
   }[];
 }) => {
   const containerVariants = {
@@ -43,7 +44,7 @@ export const Skills = ({
             variant="default"
             className="px-3 py-1 dark:bg-gray-700 dark:text-gray-200 transition-all duration-300 hover:bg-gray-800 hover:text-white"
           >
-            {skill.name}
+            <i className={`ci ci-${skill.icon}`}></i> {skill.name}
           </Badge>
         </motion.div>
       ))}
