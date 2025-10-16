@@ -42,6 +42,30 @@ export const PROJECT_INFO = [
 },
 {
   id: 3,
+  name: "E-Commerce Smart Enterprise",
+  image: "/assets/project/ecommerce.png",
+  description:
+    "A full-stack MERN e-commerce platform offering a seamless shopping experience with AI chatbot assistance, PayPal integration, and a powerful admin dashboard for product, order, and user management. Built with React (Vite) and Node.js following MVC architecture for scalability and maintainability.",
+  link: "https://github.com/pritam-das-26/E-commerce-FrontEnd",
+  live: "https://ecommercepd26.vercel.app/",
+  bullets: [
+    "Developed a complete MERN-based online store with user authentication, cart, checkout, and payment features",
+    "Implemented JWT-based secure login and OTP-verified registration system for enhanced security",
+    "Designed responsive collection pages with dynamic product filtering and sorting for smooth UX",
+    "Built an admin dashboard for managing users, products, and orders with Cloudinary image uploads",
+    "Integrated AI chatbot using Google Dialogflow for instant product recommendations and FAQs",
+  ],
+  tech: [
+    "React.js (Vite)",
+    "Redux Toolkit",
+    "Tailwind CSS",
+    "PayPal API",
+    "Cloudinary",
+    "Dialogflow AI",
+  ],
+},
+{
+  id: 4,
   name: "Personal Portfolio",
   image: "/assets/project/portfolio.png",
   description:
