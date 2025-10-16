@@ -297,6 +297,15 @@ export default function LandingPage() {
       </div>
 
       <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center justify-center min-h-screen max-w-(--breakpoint-lg) mt-8 md:mt-28 mx-4 xl:mx-auto relative">
+        {/* Left Column - Image */}
+        <div className="flex justify-center items-center">
+          <img
+            src="https://cdna.artstation.com/p/assets/images/images/053/755/244/large/nazib-hamdan-ngoding.jpg?1662976950"
+            alt="coding"
+            className="w-10/12 object-contain"
+          />
+        </div>
+
         {/* Right Column - Content */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -318,8 +327,6 @@ export default function LandingPage() {
             <span className="text-primary font-semibold">technology</span> and{" "}
             <span className="text-primary font-semibold">innovation</span>.
           </motion.h2>
-
-          {/* Call to Action Buttons */}
 
           {/* Quick Stats */}
           <motion.div
