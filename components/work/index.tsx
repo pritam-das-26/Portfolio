@@ -38,7 +38,7 @@ export default function WorkPage() {
   // const isLightMode = resolvedTheme === "light" && mounted;
 
   return (
-    <div id="skills" className="max-w-screen-xl mt-6 md:mt-10 mx-4 xl:mx-auto">
+    <div id="skills" className="max-w-(--breakpoint-xl) mt-6 md:mt-10 mx-4 xl:mx-auto">
       <div className="w-full flex flex-col items-center">
         <div className="flex justify-center">
           <svg width="66" height="100" xmlns="http://www.w3.org/2000/svg">

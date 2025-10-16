@@ -10,7 +10,7 @@ export default function AboutMePage() {
   return (
     <div
       id="about-me"
-      className="scroll-mt-12 max-w-screen-lg lg:mx-auto mt-12 md:mt-12 px-1 md:px-4"
+      className="scroll-mt-12 max-w-(--breakpoint-lg) lg:mx-auto mt-12 md:mt-12 px-1 md:px-4"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -54,14 +54,14 @@ export default function AboutMePage() {
         </div>
 
         {/* Glowing border effect */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
+        <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 opacity-0 hover:opacity-100 transition-all duration-700 blur-xl pointer-events-none" />
 
-        <div className="relative bg-card border border-border rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-sm overflow-hidden">
+        <div className="relative bg-card border border-border rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-xs overflow-hidden">
           {/* Animated gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 hover:opacity-100 transition-all duration-700 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 opacity-0 hover:opacity-100 transition-all duration-700 pointer-events-none" />
 
           {/* Shimmer effect on hover */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
 
           <div className="relative p-6 md:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

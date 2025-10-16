@@ -3,7 +3,7 @@ import ProjectPage from "../project";
 
 const WorkProjects = () => {
   return (
-    <div className="max-w-screen-xl mx-4 xl:mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 mt-5">
+    <div className="max-w-(--breakpoint-xl) mx-4 xl:mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 mt-5">
       <h1 className="text-center col-span-1 md:col-span-2 text-xl sm:text-3xl font-bold tracking-tight sm:mt-3 dark:text-zinc-300 text-zinc-700">
         Work & Projects
       </h1>

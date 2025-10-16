@@ -62,7 +62,7 @@ const MainNav = () => {
       />
       <div
         className={cn(
-          `w-full max-w-screen-xl mx-auto flex justify-between items-center fixed z-[40] bg-opacity-80 py-4 top-0 md:top-5 left-0 md:left-1 right-0 md:right-1`,
+          `w-full max-w-(--breakpoint-xl) mx-auto flex justify-between items-center fixed z-40 bg-opacity-80 py-4 top-0 md:top-5 left-0 md:left-1 right-0 md:right-1`,
           "transition-all duration-100 ease-out",
           stickToTop
             ? "drop-shadow-lg justify-end border-2 md:rounded-xl"
@@ -75,7 +75,7 @@ const MainNav = () => {
             : "inherit",
         }}
       >
-        <div className={cn(`flex-grow pl-3`)}>
+        <div className={cn(`grow pl-3`)}>
           <Link href="/" passHref>
             <h1 className="text-2xl font-bold">Pritam Das</h1>
           </Link>
@@ -157,7 +157,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
